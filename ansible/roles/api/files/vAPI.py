@@ -249,5 +249,7 @@ def enable_cors():
     resp.headers['Access-Control-Allow-Methods'] = '*'
     resp.headers['Access-Control-Allow-Headers'] = '*'
 
+
 debug(True)
-run(host='0.0.0.0', port=8081, reloader=True)
+port = int(os.environ.get('PORT', 8000))
+run(host='0.0.0.0', port=port, reloader=True)
